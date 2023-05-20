@@ -118,7 +118,7 @@ class UserController extends Controller
     public function show($userId)
     {
         $users = $this->userRepository->findById($userId);
-        return $this->response->successResponse("Successfully get users data", $users);
+        return $this->response->successResponse("Successfully get user data", $users);
     }
 
     /**

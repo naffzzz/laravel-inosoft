@@ -14,6 +14,6 @@ class Transportation extends Model
      * @var array
      */
     protected $fillable = [
-        'machine', 'suspension', 'transmission', 'year', 'price', 'color', 'passanger_capacity', 'stock'
+        'machine', 'suspension', 'transmission', 'year', 'price', 'color', 'passanger_capacity', 'type', 'stock'
     ];
 }
