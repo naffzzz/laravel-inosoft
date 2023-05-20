@@ -121,6 +121,27 @@ class UserController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $userId)
+    {
+        $users = User::find($userId);
+        $users->name = $request->name;
+        $users->email = $request->email;
+        $users->role = $request->role;
+        $users->save();
+
+        return response()->json([
+            "message" => "User data has beed updated",
+            "data" => $users
+        ],200);    
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
