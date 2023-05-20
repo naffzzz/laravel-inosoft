@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Infastructures\Response;
+use App\Applications\UserApplication;
+use App\Repositories\UserRepository;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -13,6 +16,20 @@ use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 
 class UserController extends Controller
 {
+    protected $userApplication;
+    protected $userRepository;
+    protected $response;
+
+    public function __construct(
+        UserApplication $userApplication,
+        UserRepository $userRepository,
+        Response $response)
+    {
+        $this->userApplication = $userApplication;
+        $this->userRepository = $userRepository;
+        $this->response = $response;
+    }
+
     public function register(Request $request)
     {
         //set validation
@@ -28,25 +45,18 @@ class UserController extends Controller
         }
 
         //create user
-        $user = User::create([
-            'name'      => $request->name,
-            'email'     => $request->email,
-            'role'      => $request->role,
-            'password'  => bcrypt($request->password)
-        ]);
+        $user = $this->userApplication
+            ->preparation($request)
+            ->create()
+            ->execute();
 
         //return response JSON user is created
         if($user) {
-            return response()->json([
-                'success' => true,
-                'user'    => $user,  
-            ], 200);
+            return $this->response->successResponse("Successfully register user data", $user->original['data']);
         }
 
         //return JSON process insert failed 
-        return response()->json([
-            'success' => false,
-        ], 422);
+        return $this->response->errorResponse("Failed register user data");
     }
 
     public function login(Request $request)
@@ -67,10 +77,7 @@ class UserController extends Controller
 
         //if auth failed
         if(!$token = auth()->guard('api')->attempt($credentials)) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Your email or password was wrong'
-            ], 401);
+            return $this->response->errorResponse("Your email or password was wrong");
         }
 
         //if auth success
@@ -87,24 +94,17 @@ class UserController extends Controller
         $removeToken = JWTAuth::invalidate(JWTAuth::getToken());
 
         if($removeToken) {
-            //return response JSON
-            return response()->json([
-                'success' => true,
-                'message' => 'Logout has been successfully',
-            ]);
+            return $this->response->successResponse("Successfully register user data", null);
         }
     }
 
     public function index()
     {
-        $user = User::get();
-        return response()->json([
-            "message" => "Successfully get users data",
-            "data" => $user
-        ],200);    
+        $users = $this->userRepository->index();
+        return $this->response->successResponse("Successfully get users data", $users);
     }
 
-    public function me()
+    public function profile()
     {
         return auth()->guard('api')->user();
     }
@@ -114,16 +114,11 @@ class UserController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function show($userId)
     {
-        $users = User::find($userId);
-        return response()->json([
-            "message" => "Successfully get user data",
-            "data" => $users,
-            "result" => JWTAuth::user()
-        ],200);    
+        $users = $this->userRepository->findById($userId);
+        return $this->response->successResponse("Successfully get users data", $users);
     }
 
     /**
@@ -131,36 +126,40 @@ class UserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $userId)
     {
-        $users = User::find($userId);
-        $users->name = $request->name;
-        $users->email = $request->email;
-        $users->role = $request->role;
-        $users->save();
+        $update = $this->userApplication
+            ->preparation($request, $userId)
+            ->update()
+            ->execute();
 
-        return response()->json([
-            "message" => "User data has beed updated",
-            "data" => $users
-        ],200);    
+        if ($update->original['status'])
+        {
+            return $this->response->successResponse("Successfully update user data", $update->original['data']); 
+        }
+        
+        return $this->response->successResponse("Failed update user data", $update->original['data']); 
+        
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($userId)
     {
-        $users = User::find($userId);
-        $users->delete();
+        $delete = $this->userApplication
+            ->preparation(null, $userId)
+            ->delete()
+            ->execute();
 
-        return response()->json([
-            "message" => "User data has been deleted",
-            "data" => $users
-        ], 200);
+        if ($delete->original['status'])
+        {
+            return $this->response->successResponse("Successfully delete user data", $delete->original['data']); 
+        }
+        
+        return $this->response->successResponse("Failed delete user data", $delete->original['data']); 
     }
 }

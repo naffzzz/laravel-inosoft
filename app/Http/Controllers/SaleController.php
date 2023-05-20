@@ -2,26 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Infastructures\Response;
+use App\Applications\SaleApplication;
+use App\Repositories\SaleRepository;
 use App\Models\Sale;
 use App\Models\Transportation;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
 {
+    protected $saleApplication;
+    protected $saleRepository;
+    protected $response;
+
+    public function __construct(
+        SaleApplication $saleApplication,
+        SaleRepository $saleRepository,
+        Response $response)
+    {
+        $this->saleApplication = $saleApplication;
+        $this->saleRepository = $saleRepository;
+        $this->response = $response;
+    }
+
     public function index()
     {
-        $sales = Sale::get();
-        return response()->json([
-            "message" => "Successfully get sale data",
-            "data" => $sales
-        ],200);    
+        $sales = $this->saleRepository->index();        
+        return $this->response->successResponse("Successfully get users data", $sales);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request, $transportationId)
     {
@@ -53,16 +66,11 @@ class SaleController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function show($saleId)
     {
-        $sales = Sale::find($saleId);
-        return response()->json([
-            "message" => "Successfully get sale data",
-            "data" => $sales
-        ],200);    
-
+        $sale = $this->saleRepository->findById($saleId);
+        return $this->response->successResponse("Successfully get sale data", $sale); 
     }
 
     /**
@@ -70,34 +78,39 @@ class SaleController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $saleId)
     {
-        $sales = Sale::find($saleId);
-        $sales->sold = $request->sold;
-        $sales->save();
+        $update = $this->saleApplication
+            ->preparation($request, $saleId)
+            ->update()
+            ->execute();
 
-        return response()->json([
-            "message" => "Sale data has beed updated",
-            "data" => $sales
-        ],200);    
+        if ($update->original['status'])
+        {
+            return $this->response->successResponse("Successfully update sale data", $update->original['data']); 
+        }
+        
+        return $this->response->successResponse("Failed update sale data", $update->original['data']);   
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($saleId)
     {
-        $sales = Sale::find($saleId);
-        $sales->delete();
+        $delete = $this->saleApplication
+            ->preparation(null, $saleId)
+            ->delete()
+            ->execute();
 
-        return response()->json([
-            "message" => "Sale data has been deleted",
-            "data" => $sales
-        ], 200);
+        if ($delete->original['status'])
+        {
+            return $this->response->successResponse("Successfully delete sale data", $delete->original['data']); 
+        }
+        
+        return $this->response->successResponse("Failed delete sale data", $delete->original['data']); 
     }
 }
