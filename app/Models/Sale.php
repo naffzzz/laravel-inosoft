@@ -15,6 +15,7 @@ class Sale extends Model
      * @var array
      */
     protected $fillable = [
-        'transportation_id', 'sold'
+        'transportation_id', 
+        'sold'
     ];
 }

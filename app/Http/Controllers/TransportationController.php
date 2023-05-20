@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Infrastructure\Response;
 use App\Models\Transportation;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,7 @@ class TransportationController extends Controller
     public function index()
     {
         $transportation = Transportation::get();
-        return response()->json(["result" => $transportation],200);    
+        return Response()->success(["result" => $transportation],200);    
     }
 
     /**
