@@ -29,10 +29,15 @@ class TransportationController extends Controller
             'price'  => 'required',
             'color'  => 'required',
             'passanger_capacity'  => 'required',
+            'stock'  => 'required',
         ]);
 
-        Transportation::create($request->all());
-        return response()->json(["result" => "Transportation has been added"],200);    
+        $transportations = Transportation::create($request->all());
+
+        return response()->json([
+            "message" => "Successfully get transportation data",
+            "data" => $transportations
+        ],200);     
     }
 
     /**
@@ -43,8 +48,12 @@ class TransportationController extends Controller
      */
     public function show($transportationId)
     {
-        $transportation = Transportation::find($transportationId);
-        return response()->json(["result" => $transportation],200);    
+        $transportations = Transportation::find($transportationId);
+
+        return response()->json([
+            "message" => "Successfully get transportation data",
+            "data" => $transportations
+        ],200);    
 
     }
 
@@ -57,17 +66,41 @@ class TransportationController extends Controller
      */
     public function update(Request $request, $transportationId)
     {
-        $transportation = Transportation::find($transportationId);
-        $transportation->machine = $request->machine;
-        $transportation->suspension = $request->suspension;
-        $transportation->transmission = $request->transmission;
-        $transportation->year = $request->year;
-        $transportation->price = $request->price;
-        $transportation->color = $request->color;
-        $transportation->passanger_capacity = $request->passanger_capacity;
-        $transportation->save();
+        $transportations = Transportation::find($transportationId);
+        $transportations->machine = $request->machine;
+        $transportations->suspension = $request->suspension;
+        $transportations->transmission = $request->transmission;
+        $transportations->year = $request->year;
+        $transportations->price = $request->price;
+        $transportations->color = $request->color;
+        $transportations->passanger_capacity = $request->passanger_capacity;
+        $transportations->save();
 
-        return response()->json(["result" => "Transportation has been updated"],201);    
+        return response()->json([
+            "message" => "Transportation data has been updated",
+            "data" => $transportations
+        ],200);    
+        
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateStock(Request $request, $transportationId)
+    {
+        $transportations = Transportation::find($transportationId);
+        $transportations->stock = $transportations->stock + $request->stock;
+        $transportations->save();
+
+        return response()->json([
+            "message" => "Transportation stock data has been updated",
+            "data" => $transportations
+        ],200);    
+        
     }
 
     /**
@@ -78,9 +111,11 @@ class TransportationController extends Controller
      */
     public function destroy($transportationId)
     {
-        $transportation = Transportation::find($transportationId);
-        $transportation->delete();
-
-        return response()->json(["result" => "Transportation has been deleted"], 200);
+        $transportations = Transportation::find($transportationId);
+        $transportations->delete();
+        return response()->json([
+            "message" => "Transportation data has been deleted",
+            "data" => $transportations
+        ],200); 
     }
 }

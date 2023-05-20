@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Models;
+
 use Jenssegers\Mongodb\Eloquent\Model;
 
-class Transportation extends Model
+class Sale extends Model
 {
     protected $connection = 'mongodb';
-    protected $collection = 'transportation';
+    protected $collection = 'sale';
 
     /**
      * The attributes that are mass assignable.
@@ -14,6 +15,6 @@ class Transportation extends Model
      * @var array
      */
     protected $fillable = [
-        'machine', 'suspension', 'transmission', 'year', 'price', 'color', 'passanger_capacity', 'stock'
+        'transportation_id', 'sold'
     ];
 }
