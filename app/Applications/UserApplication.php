@@ -44,6 +44,7 @@ class UserApplication
     {
         $this->user->name = $this->request->name;
         $this->user->email = $this->request->email;
+        $this->user->password = bcrypt($this->request->password);
         $this->user->role = $this->request->role;
         return $this;
     }
