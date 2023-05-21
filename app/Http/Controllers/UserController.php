@@ -51,7 +51,7 @@ class UserController extends Controller
             ->execute();
 
         //return response JSON user is created
-        if($user) {
+        if($user->original['status']) {
             return $this->response->successResponse("Successfully register user data", $user->original['data']);
         }
 

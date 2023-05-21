@@ -43,6 +43,8 @@ Route::prefix('sale')->middleware('jwt')->group(function () {
 
 Route::prefix('transportation')->group(function () {
     Route::get('/',[TransportationController::class, 'index']);
+    Route::get('/motorcycle',[TransportationController::class, 'indexMotorcycle']);
+    Route::get('/car',[TransportationController::class, 'indexCar']);
     Route::get('/{transportationId}',[TransportationController::class, 'show']);
     Route::post('/',[TransportationController::class, 'store'])->middleware('jwt');
     Route::put('/add_stock/{transportationId}',[TransportationController::class, 'updateStock'])->middleware('jwt');

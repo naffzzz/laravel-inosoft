@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Constants\MachineTypeConstant;
 use App\Infastructures\Response;
 use App\Applications\CarApplication;
 use App\Applications\MotorcycleApplication;
@@ -36,6 +37,18 @@ class TransportationController extends Controller
         return $this->response->successResponse("Successfully get transporations data", $transportations);
     }
 
+    public function indexMotorcycle()
+    {
+        $transportations = $this->transportationRepository->indexMotorcycle();
+        return $this->response->successResponse("Successfully get motorcycles data", $transportations);
+    }
+
+    public function indexCar()
+    {
+        $transportations = $this->transportationRepository->indexCar();
+        return $this->response->successResponse("Successfully get cars data", $transportations);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -45,21 +58,52 @@ class TransportationController extends Controller
     {
         request()->validate([
             'machine'  => 'required',
-            'suspension'  => 'required',
-            'transmission'  => 'required',
-            'year'  => 'required',
-            'price'  => 'required',
-            'color'  => 'required',
-            'passanger_capacity'  => 'required',
-            'stock'  => 'required',
         ]);
 
-        $transportations = Transportation::create($request->all());
+        // insert car
+        if ($request->machine == MachineTypeConstant::Car) 
+        {
+            request()->validate([
+                'year'  => 'required',
+                'price'  => 'required',
+                'color'  => 'required',
+                'passanger_capacity'  => 'required',
+                'type'  => 'required',
+                'stock'  => 'required',
+            ]);
 
-        return response()->json([
-            "message" => "Successfully add transportation data",
-            "data" => $transportations
-        ],200);     
+            $transportations = $this->carApplication
+                ->preparation($request)
+                ->create()
+                ->execute();
+
+            if ($transportations->original['status']) {
+                return $this->response->successResponse("Successfully update transportation data", $transportations->original['data']);
+            }
+        }
+        else if ($request->machine == MachineTypeConstant::Motorcycle) // insert motorcycle
+        {
+            request()->validate([
+                'machine'  => 'required',
+                'suspension'  => 'required',
+                'transmission'  => 'required',
+                'year'  => 'required',
+                'price'  => 'required',
+                'color'  => 'required',
+                'stock'  => 'required',
+            ]);
+
+            $transportations = $this->motorcycleApplication
+                ->preparation($request)
+                ->create()
+                ->execute();
+
+            if ($transportations->original['status']) {
+                return $this->response->successResponse("Successfully update transportation data", $transportations->original['data']);
+            }
+        }
+
+        return $this->response->successResponse("Failed update transportation data", $request);  
     }
 
     /**
@@ -69,9 +113,8 @@ class TransportationController extends Controller
      */
     public function show($transportationId)
     {
-        $transporation = $this->transportationRepository->findById($transportationId);
-        return $this->response->successResponse("Successfully get transportation data", $transporation);
-
+        $transportation = $this->transportationRepository->findById($transportationId);
+        return $this->response->successResponse("Successfully get transportation data", $transportation);
     }
 
     /**
@@ -79,25 +122,34 @@ class TransportationController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $transportationId)
     {
-        $transportations = Transportation::find($transportationId);
-        $transportations->machine = $request->machine;
-        $transportations->suspension = $request->suspension;
-        $transportations->transmission = $request->transmission;
-        $transportations->year = $request->year;
-        $transportations->price = $request->price;
-        $transportations->color = $request->color;
-        $transportations->passanger_capacity = $request->passanger_capacity;
-        $transportations->save();
+        // update car
+        if ($request->machine == MachineTypeConstant::Car) 
+        {
+            $transportations = $this->carApplication
+                ->preparation($request, $transportationId)
+                ->update()
+                ->execute();
 
-        return response()->json([
-            "message" => "Transportation data has been updated",
-            "data" => $transportations
-        ],200);    
-        
+            if ($transportations->original['status']) {
+                return $this->response->successResponse("Successfully update car data", $transportations->original['data']);
+            }
+        }
+        else if ($request->machine == MachineTypeConstant::Motorcycle) // update motorcycle
+        {
+            $transportations = $this->motorcycleApplication
+                ->preparation($request, $transportationId)
+                ->update()
+                ->execute();
+
+            if ($transportations->original['status']) {
+                return $this->response->successResponse("Successfully update motorcycle data", $transportations->original['data']);
+            }
+        }
+
+        return $this->response->successResponse("Failed update transportation data", $request);    
     }
 
     /**
@@ -108,15 +160,31 @@ class TransportationController extends Controller
      */
     public function updateStock(Request $request, $transportationId)
     {
-        $transportations = Transportation::find($transportationId);
-        $transportations->stock = $transportations->stock + $request->stock;
-        $transportations->save();
+        // update car
+        if ($request->machine == MachineTypeConstant::Car) 
+        {
+            $transportations = $this->carApplication
+                ->preparation($request, $transportationId)
+                ->updateStock()
+                ->execute();
 
-        return response()->json([
-            "message" => "Transportation stock data has been updated",
-            "data" => $transportations
-        ],200);    
-        
+            if ($transportations->original['status']) {
+                return $this->response->successResponse("Successfully update car data", $transportations->original['data']);
+            }
+        }
+        else if ($request->machine == MachineTypeConstant::Motorcycle) // update motorcycle
+        {
+            $transportations = $this->motorcycleApplication
+                ->preparation($request, $transportationId)
+                ->updateStock()
+                ->execute();
+
+            if ($transportations->original['status']) {
+                return $this->response->successResponse("Successfully update motorcycle data", $transportations->original['data']);
+            }
+        }
+
+        return $this->response->successResponse("Failed update transportation data", $request); 
     }
 
     /**

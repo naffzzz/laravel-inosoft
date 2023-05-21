@@ -18,6 +18,23 @@ class CarApplication extends TransportationApplication
         $this->transportation->stock = $this->request->stock;
         return $this;
     }
+
+    public function update()
+    {
+        $this->transportation->year = $this->request->year;
+        $this->transportation->price = $this->request->price;
+        $this->transportation->color = $this->request->color;
+        $this->transportation->type = $this->request->type;
+        $this->transportation->passanger_capacity = $this->request->passanger_capacity;
+        $this->transportation->stock = $this->request->stock;
+        return $this;
+    }
+
+    public function updateStock()
+    {
+        $this->transportation->stock = $this->transportation->stock + $this->request->stock;
+        return $this;
+    }
 }
 
 ?>
