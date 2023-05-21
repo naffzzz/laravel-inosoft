@@ -5,14 +5,11 @@ namespace App\Http\Controllers;
 use App\Infastructures\Response;
 use App\Applications\UserApplication;
 use App\Repositories\UserRepository;
-use App\Models\User;
+use App\Validations\UserValidation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Tymon\JWTAuth\Facades\JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Exceptions\TokenExpiredException;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 
 class UserController extends Controller
 {
@@ -33,15 +30,11 @@ class UserController extends Controller
     public function register(Request $request)
     {
         //set validation
-        $validator = Validator::make($request->all(), [
-            'name'      => 'required',
-            'email'     => 'required|email',
-            'password'  => 'required|min:8|confirmed'
-        ]);
+        $validator = Validator::make($request->all(), UserValidation::userRule);
 
         //if validation fails
         if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
+            return $this->response->errorResponse($validator->errors());
         }
 
         //create user
@@ -62,10 +55,7 @@ class UserController extends Controller
     public function login(Request $request)
     {
         //set validation
-        $validator = Validator::make($request->all(), [
-            'email'     => 'required',
-            'password'  => 'required'
-        ]);
+        $validator = Validator::make($request->all(), UserValidation::loginRule);
 
         //if validation fails
         if ($validator->fails()) {
@@ -109,7 +99,6 @@ class UserController extends Controller
         return auth()->guard('api')->user();
     }
 
-
     /**
      * Display the specified resource.
      *
@@ -129,6 +118,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $userId)
     {
+        //set validation
+        $validator = Validator::make($request->all(), UserValidation::userRule);
+
+        if ($validator->fails()) {
+            return $this->response->errorResponse($validator->errors());
+        }
+
         $update = $this->userApplication
             ->preparation($request, $userId)
             ->update()
@@ -151,6 +147,13 @@ class UserController extends Controller
      */
     public function updateProfile(Request $request)
     {
+        //set validation
+        $validator = Validator::make($request->all(), UserValidation::userRule);
+        
+        if ($validator->fails()) {
+            return $this->response->errorResponse($validator->errors());
+        }
+
         $update = $this->userApplication
             ->preparation($request, auth()->guard('api')->user()->id)
             ->update()

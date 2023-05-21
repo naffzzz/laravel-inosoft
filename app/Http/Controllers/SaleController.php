@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Infastructures\Response;
 use App\Applications\SaleApplication;
 use App\Repositories\SaleRepository;
+use App\Validations\SaleValidation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SaleController extends Controller
 {
@@ -36,10 +38,13 @@ class SaleController extends Controller
      */
     public function store(Request $request, $transportationId)
     {
-        request()->validate([
-            'transportation_id'  => 'required',
-            'sold'  => 'required',
-        ]);
+        //set validation
+        $validator = Validator::make($request->all(), SaleValidation::saleRule);
+
+        //if validation fails
+        if ($validator->fails()) {
+            return $this->response->errorResponse($validator->errors());
+        }
 
         $sales = $this->saleApplication
                 ->preparation($request)
@@ -77,6 +82,14 @@ class SaleController extends Controller
      */
     public function update(Request $request, $saleId)
     {
+        //set validation
+        $validator = Validator::make($request->all(), SaleValidation::updateRule);
+
+        //if validation fails
+        if ($validator->fails()) {
+            return $this->response->errorResponse($validator->errors());
+        }
+
         $update = $this->saleApplication
             ->preparation($request, $saleId)
             ->update()
