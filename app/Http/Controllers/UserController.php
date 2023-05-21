@@ -94,7 +94,7 @@ class UserController extends Controller
         $removeToken = JWTAuth::invalidate(JWTAuth::getToken());
 
         if($removeToken) {
-            return $this->response->successResponse("Successfully register user data", null);
+            return $this->response->successResponse("Successfully logout user data", null);
         }
     }
 
@@ -162,7 +162,6 @@ class UserController extends Controller
         }
         
         return $this->response->successResponse("Failed update user data", $update->original['data']); 
-        
     }
 
     /**

@@ -53,7 +53,10 @@ class UserApplication
     {
         $this->user->name = $this->request->name;
         $this->user->email = $this->request->email;
-        $this->user->role = $this->request->role;
+        if (isset($this->request->role))
+        {
+            $this->user->role = $this->request->role;
+        }
         return $this;
     }
 
