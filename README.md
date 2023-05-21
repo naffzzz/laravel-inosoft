@@ -13,7 +13,8 @@
 - Clone this repository from github
 - Rename .env.example to .env
 - Run composer update
-- Connect to Mongodb server 
+- Create database transportation-inosoft
+- Import collection inside folder mongodb
 - Run php artisan serve
 - Import postman collection "Inosoft.postman_colleciton.json" from this repository
 
