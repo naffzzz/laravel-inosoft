@@ -22,14 +22,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('user')->group(function () {
-    Route::post('/',[UserController::class, 'register'])->middleware('jwt');
+    Route::post('/',[UserController::class, 'register'])->middleware(['jwt','admin']);
     Route::post('/login',[UserController::class, 'login']);
     Route::get('/profile',[UserController::class, 'profile'])->middleware('jwt');
+    Route::put('/profile',[UserController::class, 'updateProfile'])->middleware('jwt');
     Route::post('/logout',[UserController::class, 'logout'])->middleware('jwt');
     Route::get('/',[UserController::class, 'index'])->middleware('jwt');
-    Route::get('/{userId}',[UserController::class, 'show'])->middleware('jwt');
-    Route::put('/{userId}',[UserController::class, 'update'])->middleware('jwt');
-    Route::patch('/{userId}',[UserController::class, 'destroy'])->middleware('jwt');
+    Route::get('/{userId}',[UserController::class, 'show'])->middleware(['jwt','admin']);
+    Route::put('/{userId}',[UserController::class, 'update'])->middleware(['jwt','admin']);
+    Route::patch('/{userId}',[UserController::class, 'destroy'])->middleware(['jwt','admin']);
 });
 
 Route::prefix('sale')->middleware('jwt')->group(function () {
