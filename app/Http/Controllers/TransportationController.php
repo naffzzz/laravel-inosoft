@@ -9,7 +9,9 @@ use App\Applications\MotorcycleApplication;
 use App\Applications\TransportationApplication;
 use App\Repositories\TransportationRepository;
 use App\Models\Transportation;
+use App\Validations\TransportationValidation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TransportationController extends Controller
 {
@@ -56,21 +58,24 @@ class TransportationController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
-            'machine'  => 'required',
-        ]);
+        //set validation
+        $validator = Validator::make($request->all(), TransportationValidation::transportationRule);
+
+        //if validation fails
+        if ($validator->fails()) {
+            return $this->response->errorResponse($validator->errors());
+        }
 
         // insert car
         if ($request->machine == MachineTypeConstant::Car) 
         {
-            request()->validate([
-                'year'  => 'required',
-                'price'  => 'required',
-                'color'  => 'required',
-                'passanger_capacity'  => 'required',
-                'type'  => 'required',
-                'stock'  => 'required',
-            ]);
+            //set validation
+            $validator = Validator::make($request->all(), TransportationValidation::carRule);
+
+            //if validation fails
+            if ($validator->fails()) {
+                return $this->response->errorResponse($validator->errors());
+            }
 
             $transportations = $this->carApplication
                 ->preparation($request)
@@ -83,15 +88,13 @@ class TransportationController extends Controller
         }
         else if ($request->machine == MachineTypeConstant::Motorcycle) // insert motorcycle
         {
-            request()->validate([
-                'machine'  => 'required',
-                'suspension'  => 'required',
-                'transmission'  => 'required',
-                'year'  => 'required',
-                'price'  => 'required',
-                'color'  => 'required',
-                'stock'  => 'required',
-            ]);
+            //set validation
+            $validator = Validator::make($request->all(), TransportationValidation::motorcycleRule);
+
+            //if validation fails
+            if ($validator->fails()) {
+                return $this->response->errorResponse($validator->errors());
+            }
 
             $transportations = $this->motorcycleApplication
                 ->preparation($request)
@@ -128,6 +131,14 @@ class TransportationController extends Controller
         // update car
         if ($request->machine == MachineTypeConstant::Car) 
         {
+            //set validation
+            $validator = Validator::make($request->all(), TransportationValidation::carRule);
+
+            //if validation fails
+            if ($validator->fails()) {
+                return $this->response->errorResponse($validator->errors());
+            }
+
             $transportations = $this->carApplication
                 ->preparation($request, $transportationId)
                 ->update()
@@ -139,6 +150,14 @@ class TransportationController extends Controller
         }
         else if ($request->machine == MachineTypeConstant::Motorcycle) // update motorcycle
         {
+            //set validation
+            $validator = Validator::make($request->all(), TransportationValidation::motorcycleRule);
+
+            //if validation fails
+            if ($validator->fails()) {
+                return $this->response->errorResponse($validator->errors());
+            }
+
             $transportations = $this->motorcycleApplication
                 ->preparation($request, $transportationId)
                 ->update()

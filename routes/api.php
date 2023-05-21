@@ -47,8 +47,8 @@ Route::prefix('transportation')->group(function () {
     Route::get('/car',[TransportationController::class, 'indexCar']);
     Route::get('/{transportationId}',[TransportationController::class, 'show']);
     Route::post('/',[TransportationController::class, 'store'])->middleware('jwt');
-    Route::put('/add_stock/{transportationId}',[TransportationController::class, 'updateStock'])->middleware('jwt');
-    Route::put('/{transportationId}',[TransportationController::class, 'update'])->middleware('jwt');
-    Route::patch('/{transportationId}',[TransportationController::class, 'destroy'])->middleware('jwt');
+    Route::put('/add_stock/{transportationId}',[TransportationController::class, 'updateStock'])->middleware(['jwt', 'admin']);
+    Route::put('/{transportationId}',[TransportationController::class, 'update'])->middleware(['jwt', 'admin']);
+    Route::patch('/{transportationId}',[TransportationController::class, 'destroy'])->middleware(['jwt', 'admin']);
 });
 
