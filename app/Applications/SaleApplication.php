@@ -6,6 +6,7 @@ use App\Infastructures\Response;
 use App\Repositories\SaleRepository;
 use App\Repositories\TransportationRepository;
 use App\Models\Sale;
+use Exception;
 
 class SaleApplication
 {
@@ -26,7 +27,7 @@ class SaleApplication
     public function __construct(
         SaleRepository $saleRepository, 
         TransportationRepository $transportationRepository,
-        Response $response,)
+        Response $response)
     {
         $this->saleRepository = $saleRepository;
         $this->transportationRepository = $transportationRepository;
