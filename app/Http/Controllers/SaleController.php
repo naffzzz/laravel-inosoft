@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Infastructures\Response;
 use App\Applications\SaleApplication;
 use App\Repositories\SaleRepository;
-use App\Models\Sale;
-use App\Models\Transportation;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -42,24 +40,22 @@ class SaleController extends Controller
             'transportation_id'  => 'required',
             'sold'  => 'required',
         ]);
-        
-        $transportations = Transportation::find($transportationId);
-        $transportations->stock = $transportations->stock - $request->sold;
-        if ($transportations->stock < $request->sold)
+
+        $sales = $this->saleApplication
+                ->preparation($request)
+                ->updateStock()
+                ->create()
+                ->execute();
+
+        if ($sales->original['status']) {
+            return $this->response->successResponse("Successfully add sale data", $sales->original['data']);
+        }
+        else if (isset($sales->original['message']))
         {
-            return response()->json([
-                "message" => "Failed to sold data because the stock is less than sold",
-                "data" => $transportations
-            ], 422);
+            return $this->response->errorResponse($sales->original['message']);  
         }
 
-        $transportations->save();
-
-        $sales = Sale::create($request->all());
-        return response()->json([
-            "message" => "Sale has been added",
-            "data" => $sales
-        ],200);    
+        return $this->response->errorResponse("Failed add sale data");  
     }
 
     /**
@@ -91,7 +87,7 @@ class SaleController extends Controller
             return $this->response->successResponse("Successfully update sale data", $update->original['data']); 
         }
         
-        return $this->response->successResponse("Failed update sale data", $update->original['data']);   
+        return $this->response->errorResponse("Failed update sale data");   
     }
 
     /**
@@ -111,6 +107,6 @@ class SaleController extends Controller
             return $this->response->successResponse("Successfully delete sale data", $delete->original['data']); 
         }
         
-        return $this->response->successResponse("Failed delete sale data", $delete->original['data']); 
+        return $this->response->errorResponse("Failed delete sale data"); 
     }
 }

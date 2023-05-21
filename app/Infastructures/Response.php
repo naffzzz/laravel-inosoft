@@ -28,5 +28,14 @@ class Response
             'data' => $data
         ]);
     }
+
+    public static function responseObjectWithMessage($status, $message, $data)
+    {
+        return response()->json([
+            'status' => $status,
+            'message' => $message,
+            'data' => $data
+        ]);
+    }
 }
 ?>

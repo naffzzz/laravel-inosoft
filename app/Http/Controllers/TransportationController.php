@@ -103,7 +103,7 @@ class TransportationController extends Controller
             }
         }
 
-        return $this->response->successResponse("Failed update transportation data", $request);  
+        return $this->response->errorResponse("Failed update transportation data");  
     }
 
     /**
@@ -149,7 +149,7 @@ class TransportationController extends Controller
             }
         }
 
-        return $this->response->successResponse("Failed update transportation data", $request);    
+        return $this->response->errorResponse("Failed update transportation data");    
     }
 
     /**
@@ -184,7 +184,7 @@ class TransportationController extends Controller
             }
         }
 
-        return $this->response->successResponse("Failed update transportation data", $request); 
+        return $this->response->errorResponse("Failed update transportation data"); 
     }
 
     /**
@@ -204,6 +204,6 @@ class TransportationController extends Controller
             return $this->response->successResponse("Successfully delete transportation data", $delete->original['data']); 
         }
         
-        return $this->response->successResponse("Failed delete transportation data", $delete->original['data']); 
+        return $this->response->errorResponse("Failed delete transportation data"); 
     }
 }
