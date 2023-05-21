@@ -14,7 +14,7 @@
 - Rename .env.example to .env
 - Run composer update
 - Create database transportation-inosoft
-- Import collection inside folder mongodb
+- Import collection inside folder mongodb using command "mongorestore -d transportation-inosoft <directory_backup>"
 - Run php artisan serve
 - Import postman collection "Inosoft.postman_colleciton.json" from this repository
 
