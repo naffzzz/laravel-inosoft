@@ -25,11 +25,11 @@ class TransportationApplication
         $this->response = $response;
     }
 
-    public function preparation($request, $userId = null)
+    public function preparation($request, $transportationId = null)
     {
-        if ($userId != null)
+        if ($transportationId != null)
         {
-            $this->transportation = $this->transportationRepository->findById($userId);
+            $this->transportation = $this->transportationRepository->findById($transportationId);
         }
         else
         {
