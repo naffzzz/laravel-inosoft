@@ -15,6 +15,7 @@
 - Run composer update
 - Connect to Mongodb server 
 - Run php artisan serve
+- Import postman collection "Inosoft.postman_colleciton.json" from this repository
 
 ## About Laravel
 

@@ -1,0 +1,2168 @@
+{
+	"info": {
+		"_postman_id": "e25b6fcb-0ada-4ed7-8a9d-86fcd5e27212",
+		"name": "Inosoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21570529"
+	},
+	"item": [
+		{
+			"name": "Transportation",
+			"item": [
+				{
+					"name": "Get Transportation List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/transportation"
+					},
+					"response": [
+						{
+							"name": "Get Transportation List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/transportation"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:33:59 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:33:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully get transporations data\",\n    \"data\": [\n        {\n            \"_id\": \"646876cf1b6100003b000403\",\n            \"machine\": \"motorcycle\",\n            \"suspension\": \"active\",\n            \"transmission\": \"at\",\n            \"year\": 2021,\n            \"price\": 12000,\n            \"color\": \"blue\",\n            \"stock\": 12,\n            \"updated_at\": \"2023-05-20T07:29:19.090000Z\",\n            \"created_at\": \"2023-05-20T07:29:19.090000Z\"\n        },\n        {\n            \"_id\": \"6469b932cd32000019003c44\",\n            \"machine\": \"car\",\n            \"year\": 2024,\n            \"price\": 56000000,\n            \"color\": \"magenta\",\n            \"type\": \"suv\",\n            \"passanger_capacity\": 4,\n            \"stock\": 46,\n            \"updated_at\": \"2023-05-21T06:33:20.126000Z\",\n            \"created_at\": \"2023-05-21T06:24:50.056000Z\"\n        },\n        {\n            \"_id\": \"6469bac6cd32000019003c45\",\n            \"machine\": \"car\",\n            \"year\": 2024,\n            \"price\": 56000000,\n            \"color\": \"green\",\n            \"type\": \"suv\",\n            \"passanger_capacity\": 4,\n            \"stock\": 12,\n            \"updated_at\": \"2023-05-21T06:31:34.872000Z\",\n            \"created_at\": \"2023-05-21T06:31:34.872000Z\"\n        },\n        {\n            \"_id\": \"6469bac9cd32000019003c46\",\n            \"machine\": \"motorcycle\",\n            \"suspension\": \"monoshock\",\n            \"transmission\": \"automatic transmission\",\n            \"year\": 2021,\n            \"price\": 18000000,\n            \"color\": \"red\",\n            \"stock\": 36,\n            \"updated_at\": \"2023-05-21T06:31:37.096000Z\",\n            \"created_at\": \"2023-05-21T06:31:37.096000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Car List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/transportation/car"
+					},
+					"response": [
+						{
+							"name": "Get Car List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/transportation/car"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:32:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:32:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully get cars data\",\n    \"data\": [\n        {\n            \"_id\": \"6469b932cd32000019003c44\",\n            \"machine\": \"car\",\n            \"year\": 2024,\n            \"price\": 56000000,\n            \"color\": \"green\",\n            \"type\": \"suv\",\n            \"passanger_capacity\": 4,\n            \"stock\": 12,\n            \"updated_at\": \"2023-05-21T06:24:50.056000Z\",\n            \"created_at\": \"2023-05-21T06:24:50.056000Z\"\n        },\n        {\n            \"_id\": \"6469bac6cd32000019003c45\",\n            \"machine\": \"car\",\n            \"year\": 2024,\n            \"price\": 56000000,\n            \"color\": \"green\",\n            \"type\": \"suv\",\n            \"passanger_capacity\": 4,\n            \"stock\": 12,\n            \"updated_at\": \"2023-05-21T06:31:34.872000Z\",\n            \"created_at\": \"2023-05-21T06:31:34.872000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Motorcycle List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/transportation/motorcycle"
+					},
+					"response": [
+						{
+							"name": "Get Motorcycle List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/transportation/motorcycle"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:31:46 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:31:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully get motorcycles data\",\n    \"data\": [\n        {\n            \"_id\": \"646876cf1b6100003b000403\",\n            \"machine\": \"motorcycle\",\n            \"suspension\": \"active\",\n            \"transmission\": \"at\",\n            \"year\": 2021,\n            \"price\": 12000,\n            \"color\": \"blue\",\n            \"stock\": 12,\n            \"updated_at\": \"2023-05-20T07:29:19.090000Z\",\n            \"created_at\": \"2023-05-20T07:29:19.090000Z\"\n        },\n        {\n            \"_id\": \"6469bac9cd32000019003c46\",\n            \"machine\": \"motorcycle\",\n            \"suspension\": \"monoshock\",\n            \"transmission\": \"automatic transmission\",\n            \"year\": 2021,\n            \"price\": 18000000,\n            \"color\": \"red\",\n            \"stock\": 36,\n            \"updated_at\": \"2023-05-21T06:31:37.096000Z\",\n            \"created_at\": \"2023-05-21T06:31:37.096000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Transportation Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/transportation/646876cf1b6100003b000403"
+					},
+					"response": [
+						{
+							"name": "Get Transportation Detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/transportation/646876cf1b6100003b000403"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:34:12 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:34:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully get transportation data\",\n    \"data\": {\n        \"_id\": \"646876cf1b6100003b000403\",\n        \"machine\": \"motorcycle\",\n        \"suspension\": \"active\",\n        \"transmission\": \"at\",\n        \"year\": 2021,\n        \"price\": 12000,\n        \"color\": \"blue\",\n        \"stock\": 12,\n        \"updated_at\": \"2023-05-20T07:29:19.090000Z\",\n        \"created_at\": \"2023-05-20T07:29:19.090000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Car",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTAxNTUsImV4cCI6MTY4NDY1Mzc1NSwibmJmIjoxNjg0NjUwMTU1LCJqdGkiOiJOYmRxRnN0ZU9LcUhHTTVMIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oVkb5vXo-bUvDy3SXwwoh5U8p8aH4H2aYQRp1upPX1s"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"machine\":\"car\",\r\n    \"year\":2024,\r\n    \"price\": 56000000,\r\n    \"color\":\"green\",\r\n    \"passanger_capacity\":4,\r\n    \"type\":\"suv\",\r\n    \"stock\":12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/transportation"
+					},
+					"response": [
+						{
+							"name": "Create Car",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"machine\":\"car\",\r\n    \"year\":2024,\r\n    \"price\": 56000000,\r\n    \"color\":\"green\",\r\n    \"passanger_capacity\":4,\r\n    \"type\":\"suv\",\r\n    \"stock\":12\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/transportation"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:31:34 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:31:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully update transportation data\",\n    \"data\": {\n        \"machine\": \"car\",\n        \"year\": 2024,\n        \"price\": 56000000,\n        \"color\": \"green\",\n        \"type\": \"suv\",\n        \"passanger_capacity\": 4,\n        \"stock\": 12,\n        \"updated_at\": \"2023-05-21T06:31:34.872000Z\",\n        \"created_at\": \"2023-05-21T06:31:34.872000Z\",\n        \"_id\": \"6469bac6cd32000019003c45\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Car",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTAxNTUsImV4cCI6MTY4NDY1Mzc1NSwibmJmIjoxNjg0NjUwMTU1LCJqdGkiOiJOYmRxRnN0ZU9LcUhHTTVMIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oVkb5vXo-bUvDy3SXwwoh5U8p8aH4H2aYQRp1upPX1s"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"machine\":\"car\",\r\n    \"year\":2024,\r\n    \"price\": 56000000,\r\n    \"color\":\"magenta\",\r\n    \"passanger_capacity\":4,\r\n    \"type\":\"suv\",\r\n    \"stock\":46\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/transportation/6469b932cd32000019003c44"
+					},
+					"response": [
+						{
+							"name": "Update Car",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"machine\":\"car\",\r\n    \"year\":2024,\r\n    \"price\": 56000000,\r\n    \"color\":\"magenta\",\r\n    \"passanger_capacity\":4,\r\n    \"type\":\"suv\",\r\n    \"stock\":46\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/transportation/6469b932cd32000019003c44"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:33:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:33:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully update car data\",\n    \"data\": {\n        \"_id\": \"6469b932cd32000019003c44\",\n        \"machine\": \"car\",\n        \"year\": 2024,\n        \"price\": 56000000,\n        \"color\": \"magenta\",\n        \"type\": \"suv\",\n        \"passanger_capacity\": 4,\n        \"stock\": 46,\n        \"updated_at\": \"2023-05-21T06:33:20.126000Z\",\n        \"created_at\": \"2023-05-21T06:24:50.056000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Motorcycle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTAxNTUsImV4cCI6MTY4NDY1Mzc1NSwibmJmIjoxNjg0NjUwMTU1LCJqdGkiOiJOYmRxRnN0ZU9LcUhHTTVMIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oVkb5vXo-bUvDy3SXwwoh5U8p8aH4H2aYQRp1upPX1s"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"machine\":\"motorcycle\",\r\n    \"suspension\":\"monoshock\",\r\n\t\"transmission\":\"automatic transmission\",\r\n    \"year\":2021,\r\n    \"price\":18000000,\r\n    \"color\":\"red\",\r\n    \"stock\":36\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/transportation"
+					},
+					"response": [
+						{
+							"name": "Create Motorcycle",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"machine\":\"motorcycle\",\r\n    \"suspension\":\"monoshock\",\r\n\t\"transmission\":\"automatic transmission\",\r\n    \"year\":2021,\r\n    \"price\":18000000,\r\n    \"color\":\"red\",\r\n    \"stock\":36\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/transportation"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:31:37 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:31:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully update transportation data\",\n    \"data\": {\n        \"machine\": \"motorcycle\",\n        \"suspension\": \"monoshock\",\n        \"transmission\": \"automatic transmission\",\n        \"year\": 2021,\n        \"price\": 18000000,\n        \"color\": \"red\",\n        \"stock\": 36,\n        \"updated_at\": \"2023-05-21T06:31:37.096000Z\",\n        \"created_at\": \"2023-05-21T06:31:37.096000Z\",\n        \"_id\": \"6469bac9cd32000019003c46\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Motorcycle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTAxNTUsImV4cCI6MTY4NDY1Mzc1NSwibmJmIjoxNjg0NjUwMTU1LCJqdGkiOiJOYmRxRnN0ZU9LcUhHTTVMIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oVkb5vXo-bUvDy3SXwwoh5U8p8aH4H2aYQRp1upPX1s"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"machine\":\"motorcycle\",\r\n    \"suspension\":\"monoshock\",\r\n\t\"transmission\":\"automatic transmission\",\r\n    \"year\":2021,\r\n    \"price\":18000000,\r\n    \"color\":\"cyan\",\r\n    \"stock\":36\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/transportation/6469bac9cd32000019003c46"
+					},
+					"response": [
+						{
+							"name": "Update Motorcycle",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"machine\":\"motorcycle\",\r\n    \"suspension\":\"monoshock\",\r\n\t\"transmission\":\"automatic transmission\",\r\n    \"year\":2021,\r\n    \"price\":18000000,\r\n    \"color\":\"cyan\",\r\n    \"stock\":36\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/transportation/6469bac9cd32000019003c46"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:34:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:34:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "54"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully update motorcycle data\",\n    \"data\": {\n        \"_id\": \"6469bac9cd32000019003c46\",\n        \"machine\": \"motorcycle\",\n        \"suspension\": \"monoshock\",\n        \"transmission\": \"automatic transmission\",\n        \"year\": 2021,\n        \"price\": 18000000,\n        \"color\": \"cyan\",\n        \"stock\": 36,\n        \"updated_at\": \"2023-05-21T06:34:56.440000Z\",\n        \"created_at\": \"2023-05-21T06:31:37.096000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Transportation Stock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTAxNTUsImV4cCI6MTY4NDY1Mzc1NSwibmJmIjoxNjg0NjUwMTU1LCJqdGkiOiJOYmRxRnN0ZU9LcUhHTTVMIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oVkb5vXo-bUvDy3SXwwoh5U8p8aH4H2aYQRp1upPX1s"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stock\":\"1\",\r\n    \"machine\":\"car\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/transportation/add_stock/6469b932cd32000019003c44"
+					},
+					"response": [
+						{
+							"name": "Update Transportation Stock",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"stock\":\"1\",\r\n    \"machine\":\"car\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/transportation/add_stock/6469b932cd32000019003c44"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:36:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:36:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully update car data\",\n    \"data\": {\n        \"_id\": \"6469b932cd32000019003c44\",\n        \"machine\": \"car\",\n        \"year\": 2024,\n        \"price\": 56000000,\n        \"color\": \"magenta\",\n        \"type\": \"suv\",\n        \"passanger_capacity\": 4,\n        \"stock\": 47,\n        \"updated_at\": \"2023-05-21T06:36:27.141000Z\",\n        \"created_at\": \"2023-05-21T06:24:50.056000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Transportation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTAxNTUsImV4cCI6MTY4NDY1Mzc1NSwibmJmIjoxNjg0NjUwMTU1LCJqdGkiOiJOYmRxRnN0ZU9LcUhHTTVMIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oVkb5vXo-bUvDy3SXwwoh5U8p8aH4H2aYQRp1upPX1s"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/transportation/6469bac9cd32000019003c46"
+					},
+					"response": [
+						{
+							"name": "Delete Transportation",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/transportation/6468763bff5000001d0016c3"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:27:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 06:27:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully delete transportation data\",\n    \"data\": {\n        \"_id\": \"6468763bff5000001d0016c3\",\n        \"machine\": \"car\",\n        \"suspension\": \"active\",\n        \"year\": 2021,\n        \"price\": 12000,\n        \"color\": \"blue\",\n        \"passanger_capacity\": 4,\n        \"stock\": 12,\n        \"updated_at\": \"2023-05-20T07:26:51.430000Z\",\n        \"created_at\": \"2023-05-20T07:26:51.430000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sale",
+			"item": [
+				{
+					"name": "Get Sale",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NDU2NTYsImV4cCI6MTY4NDY0OTI1NiwibmJmIjoxNjg0NjQ1NjU2LCJqdGkiOiIyWWVmRkJGTlhLS3FTQlR3Iiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.jz9uGI0OFQENdfXi0HRmaqO1clJjgPyW2V5SEwVrwqI"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/sale"
+					},
+					"response": [
+						{
+							"name": "Get Sale",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/sale"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:02:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:02:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully get users data\",\n    \"data\": [\n        {\n            \"_id\": \"646872a4e11f0000a8004ca3\",\n            \"transportation_id\": \"64686da1fb09000038007563\",\n            \"sold\": \"1\",\n            \"updated_at\": \"2023-05-20T20:27:18.418000Z\",\n            \"created_at\": \"2023-05-20T07:11:32.199000Z\"\n        },\n        {\n            \"_id\": \"646876b21b6100003b000402\",\n            \"transportation_id\": \"646875fbff5000001d0016c2\",\n            \"sold\": \"12\",\n            \"updated_at\": \"2023-05-20T07:28:50.404000Z\",\n            \"created_at\": \"2023-05-20T07:28:50.404000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Sale Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/sale/646872a4e11f0000a8004ca3"
+					},
+					"response": [
+						{
+							"name": "Get Sale Detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/sale/646872a4e11f0000a8004ca3"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:02:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:02:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully get sale data\",\n    \"data\": {\n        \"_id\": \"646872a4e11f0000a8004ca3\",\n        \"transportation_id\": \"64686da1fb09000038007563\",\n        \"sold\": \"1\",\n        \"updated_at\": \"2023-05-20T20:27:18.418000Z\",\n        \"created_at\": \"2023-05-20T07:11:32.199000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Sale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTAxNTUsImV4cCI6MTY4NDY1Mzc1NSwibmJmIjoxNjg0NjUwMTU1LCJqdGkiOiJOYmRxRnN0ZU9LcUhHTTVMIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oVkb5vXo-bUvDy3SXwwoh5U8p8aH4H2aYQRp1upPX1s"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transportation_id\":\"646875fbff5000001d0016c2\",\r\n    \"sold\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/sale/646876b21b6100003b000402"
+					},
+					"response": [
+						{
+							"name": "Create Sale",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"transportation_id\":\"6469b932cd32000019003c44\",\r\n    \"sold\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/sale/646876b21b6100003b000402"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:04:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:04:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully add sale data\",\n    \"data\": {\n        \"transportation_id\": \"6469b932cd32000019003c44\",\n        \"sold\": \"1\",\n        \"updated_at\": \"2023-05-21T07:04:28.702000Z\",\n        \"created_at\": \"2023-05-21T07:04:28.702000Z\",\n        \"_id\": \"6469c27ccd32000019003c47\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Sale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTAxNTUsImV4cCI6MTY4NDY1Mzc1NSwibmJmIjoxNjg0NjUwMTU1LCJqdGkiOiJOYmRxRnN0ZU9LcUhHTTVMIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oVkb5vXo-bUvDy3SXwwoh5U8p8aH4H2aYQRp1upPX1s"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sold\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/sale/6469c294cd32000019003c48"
+					},
+					"response": [
+						{
+							"name": "Update Sale",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sold\":\"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/sale/6469c294cd32000019003c48"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:05:04 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:05:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "54"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully update sale data\",\n    \"data\": {\n        \"_id\": \"6469c294cd32000019003c48\",\n        \"transportation_id\": \"6469b932cd32000019003c44\",\n        \"sold\": \"2\",\n        \"updated_at\": \"2023-05-21T07:05:04.241000Z\",\n        \"created_at\": \"2023-05-21T07:04:52.646000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Sale",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/sale/64692c6cbc030000dd0060d4"
+					},
+					"response": [
+						{
+							"name": "Delete Sale",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/sale/646872a4e11f0000a8004ca3"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:02:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:02:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "50"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully delete sale data\",\n    \"data\": {\n        \"_id\": \"646872a4e11f0000a8004ca3\",\n        \"transportation_id\": \"64686da1fb09000038007563\",\n        \"sold\": \"1\",\n        \"updated_at\": \"2023-05-20T20:27:18.418000Z\",\n        \"created_at\": \"2023-05-20T07:11:32.199000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NDc0MjAsImV4cCI6MTY4NDY1MTAyMCwibmJmIjoxNjg0NjQ3NDIwLCJqdGkiOiJCV2duUmNjcktaM2dtWG51Iiwic3ViIjoiNjQ2OWFkZjZjZDMyMDAwMDE5MDAzYzQzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.3eu6sHX-nrOO9euOJuMeDJbqtplPFFAMVa-jrEGxH4U"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"afifah\",\r\n    \"email\" : \"afifah@gmail.com\",\r\n    \"role\" : \"employee\",\r\n    \"password\" : \"1q2w3e4r\",\r\n    \"password_confirmation\" : \"1q2w3e4r\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/user/"
+					},
+					"response": [
+						{
+							"name": "Register User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"afifah\",\r\n    \"email\" : \"afifah@gmail.com\",\r\n    \"role\" : \"employee\",\r\n    \"password\" : \"1q2w3e4r\",\r\n    \"password_confirmation\" : \"1q2w3e4r\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/user/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:11:26 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:11:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "55"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully register user data\",\n    \"data\": {\n        \"name\": \"afifah\",\n        \"email\": \"afifah@gmail.com\",\n        \"role\": \"employee\",\n        \"updated_at\": \"2023-05-21T07:11:26.081000Z\",\n        \"created_at\": \"2023-05-21T07:11:26.081000Z\",\n        \"_id\": \"6469c41ecd32000019003c49\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"nafazu@gmail.com\",\r\n    \"password\" : \"1q2w3e4r\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/user/login"
+					},
+					"response": [
+						{
+							"name": "Login User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"nafazu@gmail.com\",\r\n    \"password\" : \"1q2w3e4r\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/user/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:05:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:05:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"6469386dbc030000dd0060d9\",\n        \"name\": \"nafa zulfasan ky\",\n        \"email\": \"nafazu@gmail.com\",\n        \"role\": \"admin\",\n        \"updated_at\": \"2023-05-20T21:15:25.140000Z\",\n        \"created_at\": \"2023-05-20T21:15:25.140000Z\"\n    },\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTI3MjAsImV4cCI6MTY4NDY1NjMyMCwibmJmIjoxNjg0NjUyNzIwLCJqdGkiOiJHZEtESUdMampKU1ZmcGg5Iiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.EFuAdlkJZoRm4Wm7v4qlxosZKKNWDu6tU2RJucey8EI\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTI3ODAsImV4cCI6MTY4NDY1NjM4MCwibmJmIjoxNjg0NjUyNzgwLCJqdGkiOiJiTU01bXBPa1N5bFEyQk9SIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.crRzpyp4ur22hab6oaakLdwuGPc2DcyhBzjrg9hMmig"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/user/logout"
+					},
+					"response": [
+						{
+							"name": "Logout User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/user/logout"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:06:26 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:06:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully logout user data\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTI3OTMsImV4cCI6MTY4NDY1NjM5MywibmJmIjoxNjg0NjUyNzkzLCJqdGkiOiJuMEFiWFgycjQ1NEttQ1dKIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.rmD9BA_o5Oce-REMfeH1aiIjctBd_vLn0kCz50ONxk8"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"affaan\",\r\n    \"email\" : \"affaan@gmail.com\",\r\n    \"password\" : \"1q2w3e4r5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/user/6469adf6cd32000019003c43"
+					},
+					"response": [
+						{
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"affaan\",\r\n    \"email\" : \"affaan@gmail.com\",\r\n    \"password\" : \"1q2w3e4r5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/user/6469adf6cd32000019003c43"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:07:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:07:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully update user data\",\n    \"data\": {\n        \"_id\": \"6469adf6cd32000019003c43\",\n        \"name\": \"affaan\",\n        \"email\": \"affaan@gmail.com\",\n        \"role\": null,\n        \"updated_at\": \"2023-05-21T07:07:36.095000Z\",\n        \"created_at\": \"2023-05-21T05:36:54.413000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTI3OTMsImV4cCI6MTY4NDY1NjM5MywibmJmIjoxNjg0NjUyNzkzLCJqdGkiOiJuMEFiWFgycjQ1NEttQ1dKIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.rmD9BA_o5Oce-REMfeH1aiIjctBd_vLn0kCz50ONxk8"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/user/6469adf6cd32000019003c43"
+					},
+					"response": [
+						{
+							"name": "Delete User",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/user/6469adf6cd32000019003c43"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:11:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:11:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully delete user data\",\n    \"data\": {\n        \"_id\": \"6469adf6cd32000019003c43\",\n        \"name\": \"affaan\",\n        \"email\": \"affaan@gmail.com\",\n        \"role\": \"employee\",\n        \"updated_at\": \"2023-05-21T07:07:36.095000Z\",\n        \"created_at\": \"2023-05-21T05:36:54.413000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NDU2NTYsImV4cCI6MTY4NDY0OTI1NiwibmJmIjoxNjg0NjQ1NjU2LCJqdGkiOiIyWWVmRkJGTlhLS3FTQlR3Iiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.jz9uGI0OFQENdfXi0HRmaqO1clJjgPyW2V5SEwVrwqI"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/user/"
+					},
+					"response": [
+						{
+							"name": "Get User List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/user/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:06:58 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:06:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "53"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully get users data\",\n    \"data\": [\n        {\n            \"_id\": \"6469386dbc030000dd0060d9\",\n            \"name\": \"nafa zulfasan ky\",\n            \"email\": \"nafazu@gmail.com\",\n            \"role\": \"admin\",\n            \"updated_at\": \"2023-05-20T21:15:25.140000Z\",\n            \"created_at\": \"2023-05-20T21:15:25.140000Z\"\n        },\n        {\n            \"_id\": \"6469adf6cd32000019003c43\",\n            \"name\": \"azusa\",\n            \"email\": \"azusa@gmail.com\",\n            \"role\": null,\n            \"updated_at\": \"2023-05-21T05:42:08.438000Z\",\n            \"created_at\": \"2023-05-21T05:36:54.413000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get My Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NDU2NTYsImV4cCI6MTY4NDY0OTI1NiwibmJmIjoxNjg0NjQ1NjU2LCJqdGkiOiIyWWVmRkJGTlhLS3FTQlR3Iiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.jz9uGI0OFQENdfXi0HRmaqO1clJjgPyW2V5SEwVrwqI"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2MDQzMTEsImV4cCI6MTY4NDYwNzkxMSwibmJmIjoxNjg0NjA0MzExLCJqdGkiOiJ4ZUQwQ0ZQTTJlZ3RRUE9iIiwic3ViIjoiNjQ2ODhiNjM1ZDc0MDAwMGIzMDA1MTQzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsIm5hbWUiOiJuYWZhIHp1bGZhIn0.lXrINgpgNbZ06_62GXFhtQYq0Md2Sh02m2lZlLbpic4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/user/profile"
+					},
+					"response": [
+						{
+							"name": "Get My Profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2MDQzMTEsImV4cCI6MTY4NDYwNzkxMSwibmJmIjoxNjg0NjA0MzExLCJqdGkiOiJ4ZUQwQ0ZQTTJlZ3RRUE9iIiwic3ViIjoiNjQ2ODhiNjM1ZDc0MDAwMGIzMDA1MTQzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsIm5hbWUiOiJuYWZhIHp1bGZhIn0.lXrINgpgNbZ06_62GXFhtQYq0Md2Sh02m2lZlLbpic4",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/user/profile"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:06:42 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:06:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6469386dbc030000dd0060d9\",\n    \"name\": \"nafa zulfasan ky\",\n    \"email\": \"nafazu@gmail.com\",\n    \"role\": \"admin\",\n    \"updated_at\": \"2023-05-20T21:15:25.140000Z\",\n    \"created_at\": \"2023-05-20T21:15:25.140000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update My Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2NTI3OTMsImV4cCI6MTY4NDY1NjM5MywibmJmIjoxNjg0NjUyNzkzLCJqdGkiOiJuMEFiWFgycjQ1NEttQ1dKIiwic3ViIjoiNjQ2OTM4NmRiYzAzMDAwMGRkMDA2MGQ5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.rmD9BA_o5Oce-REMfeH1aiIjctBd_vLn0kCz50ONxk8"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2MDQzMTEsImV4cCI6MTY4NDYwNzkxMSwibmJmIjoxNjg0NjA0MzExLCJqdGkiOiJ4ZUQwQ0ZQTTJlZ3RRUE9iIiwic3ViIjoiNjQ2ODhiNjM1ZDc0MDAwMGIzMDA1MTQzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsIm5hbWUiOiJuYWZhIHp1bGZhIn0.lXrINgpgNbZ06_62GXFhtQYq0Md2Sh02m2lZlLbpic4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"aka\",\r\n    \"email\" : \"aka@gmail.com\",\r\n    \"password\" : \"1q2w3e4r5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/user/profile"
+					},
+					"response": [
+						{
+							"name": "Update My Profile",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2ODQ2MDQzMTEsImV4cCI6MTY4NDYwNzkxMSwibmJmIjoxNjg0NjA0MzExLCJqdGkiOiJ4ZUQwQ0ZQTTJlZ3RRUE9iIiwic3ViIjoiNjQ2ODhiNjM1ZDc0MDAwMGIzMDA1MTQzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsIm5hbWUiOiJuYWZhIHp1bGZhIn0.lXrINgpgNbZ06_62GXFhtQYq0Md2Sh02m2lZlLbpic4",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"aka\",\r\n    \"email\" : \"aka@gmail.com\",\r\n    \"password\" : \"1q2w3e4r5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/user/profile"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:07:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:07:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully update user data\",\n    \"data\": {\n        \"_id\": \"6469386dbc030000dd0060d9\",\n        \"name\": \"aka\",\n        \"email\": \"aka@gmail.com\",\n        \"role\": null,\n        \"updated_at\": \"2023-05-21T07:07:57.781000Z\",\n        \"created_at\": \"2023-05-20T21:15:25.140000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User Data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"nafaz\",\r\n    \"email\" : \"nafaz@gmail.com\",\r\n    \"password\" : \"1q2w3e4r\",\r\n    \"password_confirmation\" : \"1q2w3e4r\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/user/64688aed5d740000b3005142"
+					},
+					"response": [
+						{
+							"name": "Get User Data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"nafaz\",\r\n    \"email\" : \"nafaz@gmail.com\",\r\n    \"password\" : \"1q2w3e4r\",\r\n    \"password_confirmation\" : \"1q2w3e4r\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/user/6469386dbc030000dd0060d9"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:07:11 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 07:07:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "52"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully get user data\",\n    \"data\": {\n        \"_id\": \"6469386dbc030000dd0060d9\",\n        \"name\": \"nafa zulfasan ky\",\n        \"email\": \"nafazu@gmail.com\",\n        \"role\": \"admin\",\n        \"updated_at\": \"2023-05-20T21:15:25.140000Z\",\n        \"created_at\": \"2023-05-20T21:15:25.140000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
