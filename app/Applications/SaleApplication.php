@@ -6,7 +6,6 @@ use App\Infastructures\Response;
 use App\Repositories\SaleRepository;
 use App\Repositories\TransportationRepository;
 use App\Models\Sale;
-use Exception;
 
 class SaleApplication
 {
