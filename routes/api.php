@@ -22,17 +22,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('user')->group(function () {
-    Route::post('/',[UserController::class, 'register']);
+    Route::post('/',[UserController::class, 'register'])->middleware('jwt');
     Route::post('/login',[UserController::class, 'login']);
-    Route::get('/profile',[UserController::class, 'profile']);
-    Route::post('/logout',[UserController::class, 'logout']);
-    Route::get('/',[UserController::class, 'index']);
-    Route::get('/{userId}',[UserController::class, 'show']);
-    Route::put('/{userId}',[UserController::class, 'update']);
-    Route::patch('/{userId}',[UserController::class, 'destroy']);
+    Route::get('/profile',[UserController::class, 'profile'])->middleware('jwt');
+    Route::post('/logout',[UserController::class, 'logout'])->middleware('jwt');
+    Route::get('/',[UserController::class, 'index'])->middleware('jwt');
+    Route::get('/{userId}',[UserController::class, 'show'])->middleware('jwt');
+    Route::put('/{userId}',[UserController::class, 'update'])->middleware('jwt');
+    Route::patch('/{userId}',[UserController::class, 'destroy'])->middleware('jwt');
 });
 
-Route::prefix('sale')->group(function () {
+Route::prefix('sale')->middleware('jwt')->group(function () {
     Route::get('/',[SaleController::class, 'index']);
     Route::get('/{saleId}',[SaleController::class, 'show']);
     Route::post('/{transportationId}',[SaleController::class, 'store']);
@@ -43,9 +43,9 @@ Route::prefix('sale')->group(function () {
 Route::prefix('transportation')->group(function () {
     Route::get('/',[TransportationController::class, 'index']);
     Route::get('/{transportationId}',[TransportationController::class, 'show']);
-    Route::post('/',[TransportationController::class, 'store']);
-    Route::put('/add_stock/{transportationId}',[TransportationController::class, 'updateStock']);
-    Route::put('/{transportationId}',[TransportationController::class, 'update']);
-    Route::patch('/{transportationId}',[TransportationController::class, 'destroy']);
+    Route::post('/',[TransportationController::class, 'store'])->middleware('jwt');
+    Route::put('/add_stock/{transportationId}',[TransportationController::class, 'updateStock'])->middleware('jwt');
+    Route::put('/{transportationId}',[TransportationController::class, 'update'])->middleware('jwt');
+    Route::patch('/{transportationId}',[TransportationController::class, 'destroy'])->middleware('jwt');
 });
 
