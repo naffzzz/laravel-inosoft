@@ -144,6 +144,28 @@ class UserController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     */
+    public function updateProfile(Request $request)
+    {
+        $update = $this->userApplication
+            ->preparation($request, auth()->guard('api')->user()->id)
+            ->update()
+            ->execute();
+
+        if ($update->original['status'])
+        {
+            return $this->response->successResponse("Successfully update user data", $update->original['data']); 
+        }
+        
+        return $this->response->successResponse("Failed update user data", $update->original['data']); 
+        
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
