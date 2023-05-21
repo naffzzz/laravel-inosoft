@@ -104,7 +104,7 @@ class UserController extends Controller
         return $this->response->successResponse("Successfully get users data", $users);
     }
 
-    public function profile()
+    public function profile(Request $request)
     {
         return auth()->guard('api')->user();
     }
