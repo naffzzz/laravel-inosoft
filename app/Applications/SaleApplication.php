@@ -26,7 +26,7 @@ class SaleApplication
     public function __construct(
         SaleRepository $saleRepository, 
         TransportationRepository $transportationRepository,
-        Response $response,)
+        Response $response)
     {
         $this->saleRepository = $saleRepository;
         $this->transportationRepository = $transportationRepository;
