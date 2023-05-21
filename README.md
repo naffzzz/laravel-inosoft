@@ -7,6 +7,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Installation Laravel-Inosoft Guide 
+
+- [Download and Install composser](https://getcomposer.org/download/).
+- Clone this repository from github
+- Rename .env.example to .env
+- Run composer update
+- Connect to Mongodb server 
+- Run php artisan serve
+- Import postman collection "Inosoft.postman_colleciton.json" from this repository
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
