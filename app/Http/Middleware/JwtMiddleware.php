@@ -29,13 +29,13 @@ class JwtMiddleware
             $payload = $token->getPayload();
     
             if (isset($token) && $payload->get('exp') < time()) {
-                return $this->response->errorResponse('Token has expired');
+                return $this->response->unautorizeResponse('Token has expired');
             }
             return $next($request);
         }
         catch (\Exception $e)
         {
-            return $this->response->errorResponse('Token has expired');
+            return $this->response->unautorizeResponse('Token has expired');
         }
     }
 }

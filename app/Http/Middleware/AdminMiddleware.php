@@ -30,7 +30,7 @@ class AdminMiddleware
             $payload = $token->getPayload();
     
             if (isset($token) && $payload->get('exp') < time()) {
-                return $this->response->errorResponse('Token has expired');
+                return $this->response->unautorizeResponse('Token has expired');
             }
 
             if (auth()->guard('api')->user()->role == UserRoleConstant::Admin)
@@ -38,11 +38,11 @@ class AdminMiddleware
                 return $next($request);
             }
 
-            return $this->response->errorResponse('You are not eligible to do this');
+            return $this->response->validationResponse('You are not eligible to do this');
         }
         catch (\Exception $e)
         {
-            return $this->response->errorResponse('You are not eligible to do this');
+            return $this->response->validationResponse('You are not eligible to do this');
         }
     }
 }

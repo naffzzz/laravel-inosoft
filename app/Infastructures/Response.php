@@ -18,7 +18,23 @@ class Response
         return response()->json([
             'success' => false,
             'message' => $message
+        ], 500);
+    }
+
+    public static function validationResponse($message)
+    {
+        return response()->json([
+            'success' => false,
+            'message' => $message
         ], 422);
+    }
+
+    public static function unautorizeResponse($message)
+    {
+        return response()->json([
+            'success' => false,
+            'message' => $message
+        ], 401);
     }
 
     public static function responseObject($status, $data)

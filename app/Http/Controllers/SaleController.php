@@ -28,7 +28,12 @@ class SaleController extends Controller
     public function index()
     {
         $sales = $this->saleRepository->index();        
-        return $this->response->successResponse("Successfully get users data", $sales);
+        if ($sales)
+        {
+            return $this->response->successResponse("Successfully get sales data", $sales);
+        }
+        return $this->response->errorResponse("Sales data not found");
+        
     }
 
     /**
@@ -43,7 +48,7 @@ class SaleController extends Controller
 
         //if validation fails
         if ($validator->fails()) {
-            return $this->response->errorResponse($validator->errors());
+            return $this->response->validationResponse($validator->errors());
         }
 
         $sales = $this->saleApplication
@@ -71,7 +76,11 @@ class SaleController extends Controller
     public function show($saleId)
     {
         $sale = $this->saleRepository->findById($saleId);
-        return $this->response->successResponse("Successfully get sale data", $sale); 
+        if ($sale)
+        {
+            return $this->response->successResponse("Successfully get sale data", $sale); 
+        }
+        return $this->response->errorResponse("Sale data not found");
     }
 
     /**
@@ -87,7 +96,7 @@ class SaleController extends Controller
 
         //if validation fails
         if ($validator->fails()) {
-            return $this->response->errorResponse($validator->errors());
+            return $this->response->validationResponse($validator->errors());
         }
 
         $update = $this->saleApplication

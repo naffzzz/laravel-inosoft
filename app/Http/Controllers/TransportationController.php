@@ -36,19 +36,31 @@ class TransportationController extends Controller
     public function index()
     {
         $transportations = $this->transportationRepository->index();
-        return $this->response->successResponse("Successfully get transporations data", $transportations);
+        if ($transportations)
+        {
+            return $this->response->successResponse("Successfully get transporations data", $transportations);
+        }
+        return $this->response->errorResponse("Transportations data not found");
     }
 
     public function indexMotorcycle()
     {
         $transportations = $this->transportationRepository->indexMotorcycle();
-        return $this->response->successResponse("Successfully get motorcycles data", $transportations);
+        if ($transportations)
+        {
+            return $this->response->successResponse("Successfully get motorcycles data", $transportations);
+        }
+        return $this->response->errorResponse("Motorcycles data not found");
     }
 
     public function indexCar()
     {
         $transportations = $this->transportationRepository->indexCar();
-        return $this->response->successResponse("Successfully get cars data", $transportations);
+        if ($transportations)
+        {
+            return $this->response->successResponse("Successfully get cars data", $transportations);
+        }
+        return $this->response->errorResponse("Cars data not found");
     }
 
     /**
@@ -63,7 +75,7 @@ class TransportationController extends Controller
 
         //if validation fails
         if ($validator->fails()) {
-            return $this->response->errorResponse($validator->errors());
+            return $this->response->validationResponse($validator->errors());
         }
 
         // insert car
@@ -74,7 +86,7 @@ class TransportationController extends Controller
 
             //if validation fails
             if ($validator->fails()) {
-                return $this->response->errorResponse($validator->errors());
+                return $this->response->validationResponse($validator->errors());
             }
 
             $transportations = $this->carApplication
@@ -93,7 +105,7 @@ class TransportationController extends Controller
 
             //if validation fails
             if ($validator->fails()) {
-                return $this->response->errorResponse($validator->errors());
+                return $this->response->validationResponse($validator->errors());
             }
 
             $transportations = $this->motorcycleApplication
@@ -117,7 +129,12 @@ class TransportationController extends Controller
     public function show($transportationId)
     {
         $transportation = $this->transportationRepository->findById($transportationId);
-        return $this->response->successResponse("Successfully get transportation data", $transportation);
+        
+        if ($transportation)
+        {
+            return $this->response->successResponse("Successfully get transportation data", $transportation);
+        }
+        return $this->response->errorResponse("Cars data not found");
     }
 
     /**
@@ -136,7 +153,7 @@ class TransportationController extends Controller
 
             //if validation fails
             if ($validator->fails()) {
-                return $this->response->errorResponse($validator->errors());
+                return $this->response->validationResponse($validator->errors());
             }
 
             $transportations = $this->carApplication
@@ -155,7 +172,7 @@ class TransportationController extends Controller
 
             //if validation fails
             if ($validator->fails()) {
-                return $this->response->errorResponse($validator->errors());
+                return $this->response->validationResponse($validator->errors());
             }
 
             $transportations = $this->motorcycleApplication
