@@ -12,11 +12,26 @@
 - [Download and Install composser](https://getcomposer.org/download/).
 - Clone this repository from github
 - Rename .env.example to .env
+- Download [this] based on php version and Thread Safety (https://windows.php.net/downloads/pecl/releases/mongodb/1.9.2/) 
+- Extract downloaded file and copy "php_mongodb.dll" to "xampp/php/ext"
+- Edit php.info file inside xampp and add "extension=php_mongodb.dll"
 - Run composer update
 - Create database transportation-inosoft
 - Import collection inside folder mongodb using command "mongorestore -d transportation-inosoft <directory_backup>"
 - Run php artisan serve
 - Import postman collection "Inosoft.postman_colleciton.json" from this repository
+
+
+## Note
+To check thread safety run this code:
+<?php
+    echo phpinfo();
+?>
+-----
+All user passwords for login are "1q2w3e4r"
+-----
+admin email : aka@gmail.com
+employee email : afifah@gmail.com
 
 ## About Laravel
 
