@@ -34,7 +34,7 @@ class UserController extends Controller
 
         //if validation fails
         if ($validator->fails()) {
-            return $this->response->errorResponse($validator->errors());
+            return $this->response->validationResponse($validator->errors());
         }
 
         //create user
@@ -46,6 +46,10 @@ class UserController extends Controller
         //return response JSON user is created
         if($user->original['status']) {
             return $this->response->successResponse("Successfully register user data", $user->original['data']);
+        }
+        else if (isset($user->original['message']))
+        {
+            return $this->response->errorResponse($user->original['message']);  
         }
 
         //return JSON process insert failed 
@@ -67,7 +71,7 @@ class UserController extends Controller
 
         //if auth failed
         if(!$token = auth()->guard('api')->attempt($credentials)) {
-            return $this->response->errorResponse("Your email or password was wrong");
+            return $this->response->validationResponse("Your email or password was wrong");
         }
 
         //if auth success
@@ -91,7 +95,11 @@ class UserController extends Controller
     public function index()
     {
         $users = $this->userRepository->index();
-        return $this->response->successResponse("Successfully get users data", $users);
+        if ($users)
+        {
+            return $this->response->successResponse("Successfully get users data", $users);
+        }
+        return $this->response->errorResponse("Users data not found");
     }
 
     public function profile(Request $request)
@@ -107,7 +115,11 @@ class UserController extends Controller
     public function show($userId)
     {
         $users = $this->userRepository->findById($userId);
-        return $this->response->successResponse("Successfully get user data", $users);
+        if ($users)
+        {
+            return $this->response->successResponse("Successfully get users data", $users);
+        }
+        return $this->response->errorResponse("Users data not found");
     }
 
     /**
@@ -122,7 +134,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), UserValidation::userRule);
 
         if ($validator->fails()) {
-            return $this->response->errorResponse($validator->errors());
+            return $this->response->validationResponse($validator->errors());
         }
 
         $update = $this->userApplication
@@ -151,7 +163,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), UserValidation::userRule);
         
         if ($validator->fails()) {
-            return $this->response->errorResponse($validator->errors());
+            return $this->response->validationResponse($validator->errors());
         }
 
         $update = $this->userApplication

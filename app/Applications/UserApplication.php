@@ -18,6 +18,8 @@ class UserApplication
     private $user;
     private $request;
     private $session;
+    private $isError = false;
+    private $errorMessage;
 
     public function __construct(UserRepository $userRepository, Response $response)
     {
@@ -33,6 +35,13 @@ class UserApplication
         }
         else
         {
+            $existedUser = $this->userRepository->findByEmail($request->email);
+            if ($existedUser != null)
+            {
+                $this->isError = true;
+                $this->errorMessage = "Email has been registered";
+            }
+
             $this->user = new User;
         }
 
@@ -42,6 +51,11 @@ class UserApplication
 
     public function create()
     {
+        if ($this->isError)
+        {
+            return $this;
+        }
+
         $this->user->name = $this->request->name;
         $this->user->email = $this->request->email;
         $this->user->password = bcrypt($this->request->password);
@@ -68,6 +82,11 @@ class UserApplication
 
     public function execute()
     {   
+        if ($this->isError)
+        {
+            return $this->response->responseObjectWithMessage(false, $this->errorMessage, $this->user);
+        }
+
         if ($this->request == null)
         {
             return $this->response->responseObject(true, $this->user);
